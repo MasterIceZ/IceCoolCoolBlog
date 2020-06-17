@@ -12,7 +12,7 @@ struct A{
 A a[10010];                     ///array of struct
 int main (){
   int n;
-  scanf("%d},&n);
+  scanf("%d",&n);
   int i;
   for(i=0;i<n;i++){
     scanf("%d %d",&a[i].x,&a[i].y);
