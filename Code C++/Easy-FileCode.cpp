@@ -9,7 +9,7 @@ char name[100100],sur [100100];
 void input () {
         int id,money;
         FILE *fp;
-        fp = fopen("C:\Users\User\Desktop\data.txt","a"); // change your file path here
+        fp = fopen("DataBase.txt","a"); //filepath
         cout << "Enter Your ID : " ;
         cin >> id;
         cout << "Enter Your Name-Surname : ";
@@ -22,7 +22,7 @@ void input () {
 void output() {
         int id,want ,money;
         FILE *fp;
-        fp = fopen("C:\Users\User\Desktop\data.txt","r"); // change you file path here
+        fp = fopen("DataBase.txt","r"); //filepath
         cout << "Enter your ID : ";
         cin >> want;
         while(!feof(fp)){
@@ -35,15 +35,32 @@ void output() {
         }
         fclose(fp);
 }
+void all(){
+        int id,money,cnt=0;
+         FILE *fp;
+        fp = fopen("DataBase.txt","r"); //filepath
+        while(!feof(fp)){
+                cnt++;
+                cout << "== #" << cnt << " ==" << endl;
+                fscanf(fp,"%d %s %s %d",&id,name,sur,&money);
+                cout << "ID           : " << id << endl;
+                cout << "Name-Surname : " << name << " " << sur <<endl;
+                cout << "Salary       : " << money << endl;
+        }
+}
+char mode[10];
 int main () {
-        int mode;
         cout << "Enter Mode : ";
-        cin >> mode ; //1 for Input 0 for Output
-        if(mode){
+        cin >> mode ;
+        if(!strcmp("input",mode)){
                 input();
         }
-        else {
+        else if(!strcmp("output",mode)){
                 output();
+        }
+        else{
+                all();
         }
         return 0;
 }
+                  
