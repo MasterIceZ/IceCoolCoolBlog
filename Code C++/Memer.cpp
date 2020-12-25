@@ -1,3 +1,6 @@
+/*
+ * Algorithm : Divide and Conqueror
+ */
 #include<bits/stdc++.h>
 using namespace std;
 
