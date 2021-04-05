@@ -11,6 +11,7 @@ int main (){
 //	ios::sync_with_stdio(0);
 //	cin.tie(0);
 	int q;
+	scanf("%d", &q);
 	while(q--){
 		int n, cnt2, cnt5;
 		cnt2 = cnt5 = 0;
